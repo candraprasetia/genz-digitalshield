@@ -11,7 +11,7 @@
                 extend: {
                     animation: {
                         'marquee': 'marquee 25s linear infinite',
-                        'spin-slow': 'spin 8s linear infinite',
+                        'spin-slow': 'spin 12s linear infinite',
                     },
                     keyframes: {
                         marquee: {
@@ -23,22 +23,22 @@
             }
         }
     </script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-[#FFFDF3] text-black overflow-x-hidden">
 
     <nav class="fixed w-full z-50 bg-[#FFFDF3] border-b-4 border-black">
         <div class="w-full px-4 md:px-8 lg:px-16 py-3 md:py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2 cursor-pointer transition-transform hover:scale-105">
-                <i class="fas fa-biohazard text-xl md:text-3xl text-pink-500 animate-spin-slow"></i>
-                <span class="font-bold text-lg md:text-2xl tracking-tight">GENZ-SECURE::</span>
+            <div class="flex items-center gap-2 cursor-pointer group transition-transform duration-300">
+                <i class="fas fa-biohazard text-xl md:text-3xl text-pink-500 animate-spin-slow transition-transform duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) group-hover:scale-125 group-hover:rotate-[360deg] group-hover:text-purple-600"></i>
+                <span class="font-bold text-lg md:text-2xl tracking-tight transition-all duration-300 group-hover:translate-x-1 group-hover:text-pink-600">GENZ-SECURE::</span>
             </div>
             <div class="hidden lg:flex gap-6 items-center">
-                <a href="#etika" class="font-bold text-base hover:bg-yellow-300 px-2 py-1 brutal-border border-transparent hover:border-black transition duration-150">ETIKA</a>
-                <a href="#bagi" class="font-bold text-base hover:bg-pink-300 px-2 py-1 brutal-border border-transparent hover:border-black transition duration-150">BERBAGI</a>
-                <a href="#aman" class="font-bold text-base hover:bg-cyan-300 px-2 py-1 brutal-border border-transparent hover:border-black transition duration-150">PRIVASI</a>
-                <a href="#kuis" class="font-bold text-base hover:bg-purple-300 px-2 py-1 brutal-border border-transparent hover:border-black transition duration-150">KUIS INTERAKTIF</a>
+                <a href="#etika" class="font-bold text-base hover:bg-yellow-300 px-2 py-1 brutal-border border-transparent hover:border-black nav-link-brutal">ETIKA</a>
+                <a href="#bagi" class="font-bold text-base hover:bg-pink-300 px-2 py-1 brutal-border border-transparent hover:border-black nav-link-brutal">ANTI-HOAKS</a>
+                <a href="#aman" class="font-bold text-base hover:bg-cyan-300 px-2 py-1 brutal-border border-transparent hover:border-black nav-link-brutal">PRIVASI DATA</a>
+                <a href="#kuis" class="font-bold text-base hover:bg-purple-300 px-2 py-1 brutal-border border-transparent hover:border-black nav-link-brutal">KUIS INTERAKTIF</a>
                 <a href="#kuis" class="bg-yellow-400 brutal-border px-4 py-2 font-bold text-sm brutal-shadow-sm brutal-btn">AKSI NYATA</a>
             </div>
             <button id="menu-btn" class="block lg:hidden bg-lime-300 brutal-border p-2 brutal-shadow-sm brutal-btn z-50 focus:outline-none">
@@ -46,16 +46,22 @@
             </button>
         </div>
         <div id="mobile-menu" class="hidden fixed inset-0 bg-[#FFFDF3] z-40 flex flex-col justify-center items-center gap-5 border-l-4 border-black transition-all duration-300 transform translate-x-full lg:hidden">
-            <a href="#etika" class="mobile-link text-lg font-bold bg-yellow-300 brutal-border px-6 py-2 w-52 text-center brutal-shadow-sm">ETIKA DIGITAL</a>
+            <a href="#etika" class="mobile-link text-lg font-bold bg-yellow-300 brutal-border px-6 py-2 w-52 text-center brutal-shadow-sm">ETIKA</a>
             <a href="#bagi" class="mobile-link text-lg font-bold bg-pink-300 brutal-border px-6 py-2 w-52 text-center brutal-shadow-sm">ANTI-HOAKS</a>
             <a href="#aman" class="mobile-link text-lg font-bold bg-cyan-300 brutal-border px-6 py-2 w-52 text-center brutal-shadow-sm">PRIVASI DATA</a>
             <a href="#kuis" class="mobile-link text-lg font-bold bg-purple-300 brutal-border px-6 py-2 w-52 text-center brutal-shadow-sm">KUIS INTERAKTIF</a>
         </div>
     </nav>
 
-    <section class="pt-24 pb-8 md:pt-32 md:pb-16 px-4 md:px-8 lg:px-20 overflow-hidden">
-        <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
-            <div class="space-y-4 md:space-y-6 lg:col-span-7 text-left">
+    <section class="pt-24 pb-8 md:pt-32 md:pb-16 px-4 md:px-8 lg:px-20 overflow-hidden bg-texture-grid relative">
+        <div class="absolute top-16 left-8 w-12 h-12 bg-purple-400 brutal-border-sm rounded-full animate-shape-circle opacity-75 pointer-events-none hidden sm:block"></div>
+        <div class="absolute bottom-20 right-10 w-14 h-14 bg-yellow-300 brutal-border-sm animate-shape-square opacity-75 pointer-events-none hidden sm:block"></div>
+        <svg class="absolute top-1/4 right-1/3 w-12 h-12 animate-shape-triangle opacity-65 pointer-events-none hidden lg:block" viewBox="0 0 100 100">
+            <polygon points="50,15 90,85 10,85" fill="#f43f5e" stroke="#000" stroke-width="8"/>
+        </svg>
+
+        <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
+            <div class="space-y-4 md:space-y-6 lg:col-span-7 text-left reveal-fade-left">
                 <span class="bg-pink-400 brutal-border px-2.5 py-0.5 font-bold inline-block brutal-shadow-sm rotate-left text-[10px] md:text-sm uppercase tracking-wider animate-pulse">
                     KAMPANYE DIGITAL 2026
                 </span>
@@ -63,17 +69,17 @@
                     <span class="bg-black text-lime-300 brutal-border px-2 inline-block transform -rotate-1">INTERNET</span><br>BIJAK & AMAN!
                 </h1>
                 <p class="text-sm sm:text-base md:text-xl font-medium w-full leading-relaxed text-gray-800">
-                    Mari ciptakan ruang siber yang aman, sehat, dan produktif. Keamanan digital dimulai dari kesadaran kita hari ini.
+                    Mari mewujudkan ruang siber yang aman, sehat, dan produktif. Keamanan digital dimulai dari kesadaran kita hari ini.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-3 pt-1">
                     <a href="#kuis" class="bg-cyan-400 brutal-border px-5 py-2.5 font-bold text-sm md:text-lg brutal-shadow-sm md:brutal-shadow-lg brutal-btn text-center">IKUTI KUIS EDUKASI</a>
                     <a href="#aman" class="bg-white brutal-border px-5 py-2.5 font-bold text-sm md:text-lg brutal-shadow-sm md:brutal-shadow-lg brutal-btn text-center">PERIKSA PRIVASI</a>
                 </div>
             </div>
-            <div class="bg-white brutal-border p-3 md:p-5 brutal-shadow-sm md:brutal-shadow-lg rotate-right group cursor-pointer transition-transform hover:scale-[1.01] lg:col-span-5">
+            <div class="bg-white brutal-border p-3 md:p-5 brutal-shadow-sm md:brutal-shadow-lg rotate-right group cursor-pointer transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) hover:scale-[1.04] hover:rotate-0 lg:col-span-5 reveal-fade-right">
                 <div class="w-full h-44 sm:h-64 md:h-80 lg:h-[380px] bg-black flex items-center justify-center relative overflow-hidden">
-                    <i class="fas fa-code text-[50px] sm:text-[80px] md:text-[110px] text-lime-300 transition-transform duration-300 group-hover:scale-110 group-hover:animate-bounce"></i>
-                    <div class="absolute bottom-2 right-2 bg-pink-500 text-white font-bold px-1.5 py-0.5 text-[10px] brutal-border shadow-sm">CTRL + S</div>
+                    <i class="fas fa-code text-[50px] sm:text-[80px] md:text-[110px] text-lime-300 transition-transform duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) group-hover:scale-125 group-hover:rotate-12"></i>
+                    <div class="absolute bottom-2 right-2 bg-pink-500 text-white font-bold px-1.5 py-0.5 text-[10px] brutal-border shadow-sm transition-transform duration-300 group-hover:-translate-y-1">CTRL + S</div>
                 </div>
             </div>
         </div>
@@ -88,18 +94,21 @@
         </div>
     </div>
 
-    <section id="etika" class="py-12 md:py-16 bg-lime-200 border-b-4 border-black px-4 md:px-8 lg:px-20">
-        <div class="w-full">
-            <div class="text-center mb-10 md:mb-14">
+    <section id="etika" class="py-12 md:py-16 bg-lime-200 border-b-4 border-black px-4 md:px-8 lg:px-20 bg-texture-dots-dark relative overflow-hidden">
+        <div class="absolute top-12 right-12 w-10 h-10 bg-cyan-400 brutal-border-sm animate-shape-square opacity-70 pointer-events-none hidden sm:block"></div>
+        <div class="absolute bottom-8 left-16 w-12 h-12 bg-pink-400 brutal-border-sm rounded-full animate-shape-circle opacity-75 pointer-events-none hidden sm:block"></div>
+
+        <div class="w-full relative z-10">
+            <div class="text-center mb-10 md:mb-14 reveal-fade-up">
                 <h2 class="text-2xl md:text-5xl font-bold brutal-border bg-white px-4 py-2 inline-block brutal-shadow md:brutal-shadow-lg rotate-left">
                     GUNAKAN INTERNET SECARA <span class="bg-pink-400 text-black px-1.5">BIJAK</span>
                 </h2>
                 <p class="text-xs sm:text-sm md:text-xl mt-4 font-medium max-w-2xl mx-auto text-gray-900">Perhatikan jejak digital Anda. Jadilah pengguna internet yang beretika dalam setiap tindakan.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 lg:gap-10">
-                <div class="bg-white brutal-border p-5 md:p-8 brutal-shadow-sm md:brutal-shadow-lg transition-transform hover:-translate-y-1 hover:rotate-1 duration-200 cursor-pointer">
-                    <div class="w-10 h-10 md:w-16 md:h-16 bg-purple-400 brutal-border flex items-center justify-center mb-4 md:mb-6 brutal-shadow-sm">
-                        <i class="fas fa-brain text-lg md:text-3xl text-black"></i>
+                <div class="bg-[#FFFDF3] brutal-border p-5 md:p-8 brutal-shadow-sm md:brutal-shadow-lg brutal-card-hover cursor-pointer reveal-fade-up delay-100">
+                    <div class="w-10 h-10 md:w-16 md:h-16 bg-purple-400 brutal-border flex items-center justify-center mb-4 md:mb-6 brutal-shadow-sm icon-box-animate">
+                        <i class="fas fa-brain text-lg md:text-3xl text-black transition-colors"></i>
                     </div>
                     <h3 class="text-lg md:text-2xl font-bold mb-2 uppercase">Berpikir Kritis</h3>
                     <ul class="space-y-1 md:space-y-2 text-xs sm:text-sm md:text-lg list-disc list-outside ml-5 font-medium text-gray-800">
@@ -108,9 +117,9 @@
                         <li>Analisislah maksud dari sebuah konten.</li>
                     </ul>
                 </div>
-                <div class="bg-white brutal-border p-5 md:p-8 brutal-shadow-sm md:brutal-shadow-lg transition-transform hover:-translate-y-1 hover:-rotate-1 duration-200 cursor-pointer">
-                    <div class="w-10 h-10 md:w-16 md:h-16 bg-blue-400 brutal-border flex items-center justify-center mb-4 md:mb-6 brutal-shadow-sm">
-                        <i class="fas fa-comments text-lg md:text-3xl text-black"></i>
+                <div class="bg-[#FFFDF3] brutal-border p-5 md:p-8 brutal-shadow-sm md:brutal-shadow-lg brutal-card-hover cursor-pointer reveal-fade-up delay-200">
+                    <div class="w-10 h-10 md:w-16 md:h-16 bg-blue-400 brutal-border flex items-center justify-center mb-4 md:mb-6 brutal-shadow-sm icon-box-animate">
+                        <i class="fas fa-comments text-lg md:text-3xl text-black transition-colors"></i>
                     </div>
                     <h3 class="text-lg md:text-2xl font-bold mb-2 uppercase">Komentar Positif</h3>
                     <ul class="space-y-1 md:space-y-2 text-xs sm:text-sm md:text-lg list-disc list-outside ml-5 font-medium text-gray-800">
@@ -119,9 +128,9 @@
                         <li>Sebarkan semangat yang inspiratif.</li>
                     </ul>
                 </div>
-                <div class="bg-white brutal-border p-5 md:p-8 brutal-shadow-sm md:brutal-shadow-lg transition-transform hover:-translate-y-1 hover:rotate-1 duration-200 cursor-pointer">
-                    <div class="w-10 h-10 md:w-16 md:h-16 bg-red-400 brutal-border flex items-center justify-center mb-4 md:mb-6 brutal-shadow-sm">
-                        <i class="fas fa-stopwatch text-lg md:text-3xl text-black"></i>
+                <div class="bg-[#FFFDF3] brutal-border p-5 md:p-8 brutal-shadow-sm md:brutal-shadow-lg brutal-card-hover cursor-pointer reveal-fade-up delay-300">
+                    <div class="w-10 h-10 md:w-16 md:h-16 bg-red-400 brutal-border flex items-center justify-center mb-4 md:mb-6 brutal-shadow-sm icon-box-animate">
+                        <i class="fas fa-stopwatch text-lg md:text-3xl text-black transition-colors"></i>
                     </div>
                     <h3 class="text-lg md:text-2xl font-bold mb-2 uppercase">Manajemen Waktu</h3>
                     <ul class="space-y-1 md:space-y-2 text-xs sm:text-sm md:text-lg list-disc list-outside ml-5 font-medium text-gray-800">
@@ -134,60 +143,68 @@
         </div>
     </section>
 
-    <section id="bagi" class="py-12 md:py-16 bg-pink-100 border-b-4 border-black px-4 md:px-8 lg:px-20">
-        <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
-            <div class="bg-black brutal-border p-3 md:p-5 brutal-shadow-sm md:brutal-shadow-lg transform hover:scale-[1.01] transition-transform duration-300 cursor-pointer order-2 lg:order-1 lg:col-span-5">
-                <div class="w-full h-44 sm:h-56 md:h-64 lg:h-[320px] bg-cyan-200 flex items-center justify-center brutal-border">
-                    <i class="fas fa-bullhorn text-[50px] sm:text-[70px] md:text-[100px] text-pink-500 transform -rotate-12 hover:rotate-0 transition-transform"></i>
+    <section id="bagi" class="py-12 md:py-16 bg-pink-100 border-b-4 border-black px-4 md:px-8 lg:px-20 bg-texture-grid relative overflow-hidden">
+        <svg class="absolute bottom-10 right-14 w-12 h-12 animate-shape-triangle opacity-70 pointer-events-none hidden sm:block" viewBox="0 0 100 100">
+            <polygon points="50,15 90,85 10,85" fill="#eab308" stroke="#000" stroke-width="8"/>
+        </svg>
+        <div class="absolute top-8 left-1/4 w-10 h-10 bg-lime-300 brutal-border-sm rounded-full animate-shape-circle opacity-70 pointer-events-none hidden sm:block"></div>
+
+        <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
+            <div class="bg-black brutal-border p-3 md:p-5 brutal-shadow-sm md:brutal-shadow-lg transform transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) hover:scale-[1.03] hover:rotate-1 cursor-pointer order-2 lg:order-1 lg:col-span-5 reveal-fade-left">
+                <div class="w-full h-44 sm:h-56 md:h-64 lg:h-[320px] bg-cyan-200 flex items-center justify-center brutal-border group">
+                    <i class="fas fa-bullhorn text-[50px] sm:text-[70px] md:text-[100px] text-pink-500 transform -rotate-12 group-hover:rotate-0 group-hover:scale-115 transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1)"></i>
                 </div>
             </div>
-            <div class="space-y-4 order-1 lg:order-2 lg:col-span-7">
+            <div class="space-y-4 order-1 lg:order-2 lg:col-span-7 reveal-fade-right">
                 <span class="bg-cyan-300 brutal-border px-2.5 py-0.5 font-bold inline-block brutal-shadow-sm text-[10px] md:text-xs uppercase">Saring Sebelum Berbagi</span>
                 <h2 class="text-2xl md:text-5xl font-bold leading-tight">BERBAGI ADALAH TANGGUNG <span class="bg-yellow-400 px-1.5 brutal-border">JAWAB!</span></h2>
                 <p class="text-sm md:text-xl font-medium leading-relaxed text-gray-800">
                     Satu unggahan dapat memberikan dampak yang besar. Sebelum menekan tombol 'Bagikan', pastikan Anda tidak menyebarkan kepanikan ataupun berita bohong (hoaks).
                 </p>
                 <div class="space-y-2.5 text-xs sm:text-sm md:text-lg font-bold">
-                    <div class="flex items-center gap-3 bg-white p-3 brutal-border brutal-shadow-sm"><span class="bg-black text-white px-2 py-0.5 text-xs">01</span> Senantiasa memverifikasi kebenaran informasi.</div>
-                    <div class="flex items-center gap-3 bg-white p-3 brutal-border brutal-shadow-sm"><span class="bg-black text-white px-2 py-0.5 text-xs">02</span> Jangan mudah terpicu oleh judul berita yang manipulatif.</div>
-                    <div class="flex items-center gap-3 bg-white p-3 brutal-border brutal-shadow-sm"><span class="bg-black text-white px-2 py-0.5 text-xs">03</span> Kendalikan emosi dan hindari sikap reaktif di media sosial.</div>
+                    <div class="flex items-center gap-3 bg-white p-3 brutal-border brutal-shadow-sm list-item-hover"><span class="bg-black text-white px-2 py-0.5 text-xs">01</span> Senantiasa memverifikasi kebenaran informasi.</div>
+                    <div class="flex items-center gap-3 bg-white p-3 brutal-border brutal-shadow-sm list-item-hover"><span class="bg-black text-white px-2 py-0.5 text-xs">02</span> Jangan mudah terpicu oleh judul berita yang manipulatif.</div>
+                    <div class="flex items-center gap-3 bg-white p-3 brutal-border brutal-shadow-sm list-item-hover"><span class="bg-black text-white px-2 py-0.5 text-xs">03</span> Kendalikan emosi dan hindari sikap reaktif di media sosial.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="aman" class="py-12 md:py-16 bg-[#0A0A0A] text-[#FFFDF3] border-b-4 border-black px-4 md:px-8 lg:px-20">
-        <div class="w-full">  
-            <div class="text-center mb-10 md:mb-14">
+    <section id="aman" class="py-12 md:py-16 bg-[#0A0A0A] text-[#FFFDF3] border-b-4 border-black px-4 md:px-8 lg:px-20 bg-texture-dots-light relative overflow-hidden">
+        <div class="absolute top-16 left-12 w-12 h-12 bg-pink-500 brutal-border-sm rotate-12 animate-shape-square opacity-60 pointer-events-none hidden sm:block"></div>
+        <div class="absolute bottom-16 right-1/4 w-10 h-10 bg-purple-500 brutal-border-sm rounded-full animate-shape-circle opacity-60 pointer-events-none hidden sm:block"></div>
+
+        <div class="w-full relative z-10">  
+            <div class="text-center mb-10 md:mb-14 reveal-fade-up">
                 <h2 class="text-2xl md:text-5xl font-bold brutal-border bg-lime-300 text-black px-4 py-2 inline-block brutal-shadow md:brutal-shadow-lg rotate-right">
                     LINDUNGI DATA <span class="bg-cyan-300 px-1.5">PRIBADI!</span>
                 </h2>
                 <p class="text-xs sm:text-sm md:text-xl mt-4 font-medium max-w-2xl mx-auto text-lime-200">Data pribadi merupakan aset digital Anda yang berharga. Lindungi dengan ketat dan cegah kebocoran.</p>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-start">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:col-span-7">
-                    <div class="bg-[#1A1A1A] brutal-border p-4 md:p-6 brutal-shadow-sm hover:border-lime-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer">
-                        <i class="fas fa-lock text-xl md:text-3xl text-lime-400 mb-2 md:mb-3 block"></i>
-                        <h4 class="text-base md:text-xl font-bold mb-1 uppercase tracking-wide">Pembaruan Kata Sandi</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:col-span-7 reveal-fade-left">
+                    <div class="bg-[#1A1A1A] brutal-border p-4 md:p-6 brutal-shadow-sm transition-all duration-300 hover:border-lime-300 hover:bg-[#252525] hover:-translate-y-1.5 cursor-pointer group">
+                        <i class="fas fa-lock text-xl md:text-3xl text-lime-400 mb-2 md:mb-3 block transition-transform duration-300 group-hover:scale-115 group-hover:rotate-6"></i>
+                        <h4 class="text-base md:text-xl font-bold mb-1 uppercase tracking-wide group-hover:text-lime-300 transition-colors">Pembaruan Kata Sandi</h4>
                         <p class="text-gray-400 text-xs md:text-sm font-medium leading-relaxed">Gunakan kombinasi karakter yang kuat dan acak. Hindari penggunaan tanggal lahir Anda.</p>
                     </div>
-                    <div class="bg-[#1A1A1A] brutal-border p-4 md:p-6 brutal-shadow-sm hover:border-cyan-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer">
-                        <i class="fas fa-fingerprint text-xl md:text-3xl text-cyan-400 mb-2 md:mb-3 block"></i>
-                        <h4 class="text-base md:text-xl font-bold mb-1 uppercase tracking-wide">Aktivasi 2FA</h4>
+                    <div class="bg-[#1A1A1A] brutal-border p-4 md:p-6 brutal-shadow-sm transition-all duration-300 hover:border-cyan-300 hover:bg-[#252525] hover:-translate-y-1.5 cursor-pointer group">
+                        <i class="fas fa-fingerprint text-xl md:text-3xl text-cyan-400 mb-2 md:mb-3 block transition-transform duration-300 group-hover:scale-115 group-hover:rotate-6"></i>
+                        <h4 class="text-base md:text-xl font-bold mb-1 uppercase tracking-wide group-hover:text-cyan-300 transition-colors">Aktivasi 2FA</h4>
                         <p class="text-gray-400 text-xs md:text-sm font-medium leading-relaxed">Terapkan lapisan keamanan ganda pada akun Anda melalui fitur verifikasi dua langkah.</p>
                     </div>
-                    <div class="bg-[#1A1A1A] brutal-border p-4 md:p-6 brutal-shadow-sm hover:border-yellow-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer">
-                        <i class="fas fa-rss text-xl md:text-4xl text-yellow-400 mb-2.5 block"></i>
-                        <h4 class="text-base md:text-xl font-bold mb-1 uppercase tracking-wide">Waspada Wi-Fi Publik</h4>
+                    <div class="bg-[#1A1A1A] brutal-border p-4 md:p-6 brutal-shadow-sm transition-all duration-300 hover:border-yellow-300 hover:bg-[#252525] hover:-translate-y-1.5 cursor-pointer group">
+                        <i class="fas fa-rss text-xl md:text-4xl text-yellow-400 mb-2.5 block transition-transform duration-300 group-hover:scale-115 group-hover:rotate-6"></i>
+                        <h4 class="text-base md:text-xl font-bold mb-1 uppercase tracking-wide group-hover:text-yellow-300 transition-colors">Waspada Wi-Fi Publik</h4>
                         <p class="text-gray-400 text-xs md:text-sm font-medium leading-relaxed">Hindari melakukan transaksi keuangan atau akses data sensitif saat terhubung jaringan gratis.</p>
                     </div>
-                    <div class="bg-[#1A1A1A] brutal-border p-4 md:p-6 brutal-shadow-sm hover:border-pink-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer">
-                        <i class="fas fa-user-secret text-xl md:text-3xl text-pink-400 mb-2 md:mb-3 block"></i>
-                        <h4 class="text-base md:text-xl font-bold mb-1 uppercase tracking-wide">Batasi Informasi</h4>
+                    <div class="bg-[#1A1A1A] brutal-border p-4 md:p-6 brutal-shadow-sm transition-all duration-300 hover:border-pink-300 hover:bg-[#252525] hover:-translate-y-1.5 cursor-pointer group">
+                        <i class="fas fa-user-secret text-xl md:text-3xl text-pink-400 mb-2 md:mb-3 block transition-transform duration-300 group-hover:scale-115 group-hover:rotate-6"></i>
+                        <h4 class="text-base md:text-xl font-bold mb-1 uppercase tracking-wide group-hover:text-pink-300 transition-colors">Batasi Informasi</h4>
                         <p class="text-gray-400 text-xs md:text-sm font-medium leading-relaxed">Kurangi pembagian lokasi terkini maupun dokumen penting di platform media sosial Anda.</p>
                     </div>
                 </div>
-                <div class="bg-white text-black brutal-border p-4 md:p-6 brutal-shadow-lg lg:col-span-5 lg:rotate-1">
+                <div class="bg-white text-black brutal-border p-4 md:p-6 brutal-shadow-lg lg:col-span-5 lg:rotate-1 transition-transform duration-300 hover:rotate-0 hover:scale-[1.01] reveal-scale-in">
                     <span class="bg-purple-400 text-black font-bold text-[10px] md:text-xs brutal-border px-2 py-0.5 uppercase tracking-wide inline-block mb-2">WIDGET INTERAKTIF</span>
                     <h3 class="text-lg md:text-2xl font-bold mb-1 uppercase">Uji Kekuatan Kata Sandi 🛡️</h3>
                     <p class="text-gray-700 text-xs md:text-base mb-4 font-medium">Masukkan kata sandi yang biasa Anda gunakan untuk menguji tingkat keamanannya secara langsung.</p>
@@ -209,15 +226,20 @@
         </div>
     </section>
 
-    <section id="kuis" class="py-12 md:py-16 bg-purple-200 border-b-4 border-black px-4 md:px-8">
-        <div class="w-full max-w-4xl mx-auto">
-            <div class="text-center mb-8">
+    <section id="kuis" class="py-12 md:py-16 bg-purple-200 border-b-4 border-black px-4 md:px-8 bg-texture-grid relative overflow-hidden">
+        <div class="absolute top-14 left-14 w-10 h-10 bg-yellow-400 brutal-border-sm animate-shape-square opacity-70 pointer-events-none hidden sm:block"></div>
+        <svg class="absolute bottom-16 right-16 w-12 h-12 animate-shape-triangle opacity-70 pointer-events-none hidden sm:block" viewBox="0 0 100 100">
+            <polygon points="50,15 90,85 10,85" fill="#a855f7" stroke="#000" stroke-width="8"/>
+        </svg>
+
+        <div class="w-full max-w-4xl mx-auto relative z-10">
+            <div class="text-center mb-8 reveal-fade-up">
                 <h2 class="text-2xl md:text-5xl font-bold brutal-border bg-white px-4 py-2 inline-block brutal-shadow rotate-left">
                     UJI KESADARAN <span class="bg-yellow-400 text-black px-1.5">SIBER ANDA</span>
                 </h2>
                 <p class="text-xs sm:text-sm md:text-xl mt-4 font-medium text-gray-800">Selesaikan tiga tantangan interaktif berikut untuk mengetahui sejauh mana pemahaman Anda mengenai keamanan digital.</p>
             </div>
-            <div class="bg-white brutal-border p-4 md:p-8 brutal-shadow-lg relative">
+            <div class="bg-white brutal-border p-4 md:p-8 brutal-shadow-lg relative reveal-scale-in">
                 <div id="quiz-container">
                     <div class="flex justify-between items-center mb-4 font-bold text-[10px] sm:text-xs md:text-base border-b-4 border-black pb-2">
                         <span id="quiz-progress" class="bg-cyan-300 px-2 py-1 brutal-border border-black">PERTANYAAN 1 DARI 3</span>
@@ -225,7 +247,7 @@
                     </div>
                     <h3 id="quiz-question" class="text-base md:text-2xl font-bold mb-4 md:text-left leading-tight">Memuat Pertanyaan...</h3>
                     <div id="quiz-options" class="space-y-2.5">
-                        </div>
+                    </div>
                     <div class="mt-5 flex justify-end">
                         <button id="quiz-next-btn" class="hidden bg-black text-white font-bold px-4 py-2.5 brutal-border text-xs md:text-base brutal-shadow-sm brutal-btn uppercase">
                             Selanjutnya <i class="fas fa-arrow-right ml-1 md:ml-2"></i>
@@ -248,8 +270,8 @@
 
     <footer class="bg-black text-[#FFFDF3] border-t-4 border-lime-300 py-8 px-4 md:px-8">
         <div class="w-full flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-            <div class="flex items-center gap-2">
-                <i class="fas fa-biohazard text-2xl text-pink-500 animate-spin-slow"></i>
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <i class="fas fa-biohazard text-2xl text-pink-500 animate-spin-slow transition-transform duration-500 group-hover:rotate-[180deg] group-hover:scale-110"></i>
                 <span class="font-bold text-xl md:text-2xl tracking-tight">GENZ-SECURE::</span>
             </div>
             <div class="text-[10px] md:text-sm font-medium text-gray-400">
@@ -258,6 +280,7 @@
             </div>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

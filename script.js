@@ -1,4 +1,4 @@
-        // 1. KONTROL MENU NAVIGASI MOBILE (HP & TABLET PORTRAIT)
+// 1. KONTROL MENU NAVIGASI MOBILE (HP & TABLET PORTRAIT)
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
@@ -24,7 +24,6 @@
             });
         });
 
-
         // 2. LIVE INTERACTIVE PASSWORD STRENGTH METER & FEATURE SHOW/HIDE PW
         const pwdInput = document.getElementById('pwd-input');
         const pwdToggle = document.getElementById('pwd-toggle');
@@ -32,7 +31,6 @@
         const pwdStatus = document.getElementById('pwd-status');
         const pwdBar = document.getElementById('pwd-bar');
 
-        // Fungsi Tampilkan/Sembunyikan Sandi
         pwdToggle.addEventListener('click', () => {
             if (pwdInput.type === 'password') {
                 pwdInput.type = 'text';
@@ -43,7 +41,6 @@
             }
         });
 
-        // Pengujian Kekuatan Password
         pwdInput.addEventListener('input', () => {
             const val = pwdInput.value;
             let score = 0;
@@ -71,7 +68,6 @@
                 pwdBar.className = "bg-lime-400 h-full w-full transition-all duration-300";
             }
         });
-
 
         // 3. LOGIKA KUIS INTERAKTIF
         const quizData = [
@@ -134,7 +130,8 @@
             currentQuestion.options.forEach(option => {
                 const button = document.createElement('button');
                 button.innerText = option.text;
-                button.className = "w-full text-left font-bold p-3 bg-white brutal-border border-black hover:bg-yellow-100 transition duration-150 text-xs md:text-base brutal-shadow-sm";
+                // Ditambahkan class brutal-btn agar kancing pilihan kuis juga merespon hover yang interaktif
+                button.className = "w-full text-left font-bold p-3 bg-white brutal-border border-black text-xs md:text-base brutal-shadow-sm brutal-btn";
                 if(option.correct) {
                     button.dataset.correct = option.correct;
                 }
@@ -151,7 +148,7 @@
         }
 
         function selectAnswer(e) {
-            const selectedBtn = e.target;
+            const selectedBtn = e.currentTarget;
             const isCorrect = selectedBtn.dataset.correct === "true";
             
             if(isCorrect) {
@@ -171,7 +168,7 @@
 
             Array.from(quizOptionsEl.children).forEach(button => {
                 button.disabled = true;
-                button.classList.remove('hover:bg-yellow-100');
+                button.classList.remove('hover:translate-x-1');
             });
 
             if (currentQuestionIndex === quizData.length - 1) {
@@ -207,3 +204,27 @@
 
         quizRestartBtn.addEventListener('click', startQuiz);
         startQuiz();
+
+
+        // 4. MULTI-VARIATION SMOOTH ENTRY & SCROLL REVEAL (INTERSECTION OBSERVER)
+        document.addEventListener("DOMContentLoaded", () => {
+            const targets = document.querySelectorAll('[class*="reveal-"]');
+            
+            const observerOptions = {
+                root: null,
+                threshold: 0.08,
+                rootMargin: "0px 0px -20px 0px"
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            targets.forEach(target => {
+                revealObserver.observe(target);
+            });
+        });
